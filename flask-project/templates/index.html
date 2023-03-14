@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Bienvenu sur filmilou !! {% endblock %}</h1>
+    <br>
+
+    {% if success: %}
+    <div class="alert alert-primary" role="alert">
+        Enregistrement effectué !
+    </div>
+    {% endif %}
+
+    {% if updated: %}
+    <div class="alert alert-warning" role="alert">
+        Film modifié !
+    </div>
+    {% endif %}
+
+    {% if deleted: %}
+    <div class="alert alert-danger" role="alert">
+        Film supprimé !
+    </div>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-2">
+            <a href="/insert/" class="btn btn-primary">Ajouter un film</a>
+        </div>
+
+        <div class="col-2">
+            <a href="/get_all/" class="btn btn-success">Liste des films</a>
+        </div>
+    </div>
+{% endblock %}

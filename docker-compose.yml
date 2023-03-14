@@ -1,0 +1,21 @@
+version: "3"
+services:
+  web:
+    build: . 
+    depends_on:
+      - mongo
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./flask-project:/opt/flask-project
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME:  
+      MONGO_INITDB_ROOT_PASSWORD: 
+    volumes:
+      - mongo-data:/data/db
+      - mongo-configdb:/data/configdb
+volumes:
+  mongo-data:
+  mongo-configdb:

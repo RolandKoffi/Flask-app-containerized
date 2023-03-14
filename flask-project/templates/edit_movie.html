@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Modifier le film "{{ movie_to_update['nom'] }}" {% endblock %}</h1>
+
+<form method="POST">
+    <div class="form-group">
+        <label for="title">Nom</label>
+        <input type="text" name="nom" placeholder="Nom du film" class="form-control" value="{{movie_to_update['nom']}}"/>
+    </div>
+
+    <div class="form-group">
+        <label for="title">Genre</label>
+        <input type="text" name="genre" placeholder="Genre du film" class="form-control" value="{{movie_to_update['genre']}}"/>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-warning">Modifier</button>
+    </div>
+</form>
+<hr>
+{% endblock %}
